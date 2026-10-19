@@ -13,10 +13,9 @@
     <li> Browser sents request with <p style="font-weight:bold; display:inline;"> Method, Header and Body .</p> </li>
     <li> Server process the request and send data back with <p style="font-weight:bold; display:inline;"> Success Code, Header, Body(containing html, css and js) </p> </li>
     <li> Browser process the responce and display the webpage.
-
-
-</ol>  
+  </ol>
 </h3>
+
 
 
 <h3>
