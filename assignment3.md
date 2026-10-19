@@ -20,19 +20,20 @@
       <h3> <p style="font-weight:bold; display:inline;"> rm </p> (Remove) <br>
       <img src="assets/assignment3-4.png" height=180>
       <p> This command deletes a file from file system.</p>
-  </li
+  </li>
   <li> 
       <h3> <p style="font-weight:bold; display:inline;"> mkdir (Make Directory)</p> <br>
       <img src="assets/assignment3-5.png" height=150>
       <p> This command creates a new folder in the file system.</p>
-  </li
+  </li>
   <li> 
       <h3> <p style="font-weight:bold; display:inline;"> rmdir (Remove Directory) </p> <br>
       <img src="assets/assignment3-6.png" height=180>
       <p> This command deletes empty folder from file system.</p>
-  </li
+  </li>
   <li> 
       <h3> <p style="font-weight:bold; display:inline;"> cd (Change Directory) </p> <br>
       <img src="assets/assignment3-7.png" height=120>
       <p> This command changes the current working directory</p>
-  </li
+  </li>
+</ul>
