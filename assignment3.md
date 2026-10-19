@@ -17,7 +17,7 @@
       <p> This command creates an new empty file.</p>
   </li>
   <li> 
-      <h3> <p style="font-weight:bold; display:inline;"> rm </p> (Remove) <br>
+      <h3> <p style="font-weight:bold; display:inline;"> rm (Remove) </p> <br>
       <img src="assets/assignment3-4.png" height=180>
       <p> This command deletes a file from file system.</p>
   </li>
