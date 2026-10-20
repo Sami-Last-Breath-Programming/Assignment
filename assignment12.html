@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Portfolio with Accessible Images – HTML &amp; CSS course assignment">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio with Accessible Images</title>
+</head>
+<body>
+  <header><h1>Abdul Sami – Portfolio</h1></header>
+  <main>
+    <section>
+      <h2>Profile</h2>
+      <!-- Meaningful alt: describes content AND purpose -->
+      <img src="https://i.pinimg.com/1200x/99/93/dd/9993dd9b96bb37366a13014b02544805.jpg" width="250" height="250"
+           alt="Portrait of Kernel, a polar bear cartoon with a axe">
+    </section>
+
+    <section>
+      <h2>Projects</h2>
+      <figure>
+        <img src="assets/assignment12-1.png" width="400" height="250"
+             alt="Screenshot of the resume website showing a name header and skills list">
+        <figcaption>Resume website</figcaption>
+      </figure>
+      <figure>
+        <img src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse1.mm.bing.net%2Fth%2Fid%2FOIP.UV7a7mxcxqS2KbsF7_y_OwHaHa%3Fpid%3DApi&f=1&ipt=008c72024a41b1e76df55ad62c4bf31a53e402d16f46f34f49ac8b560a249af8&ipo=images" width="600"
+             alt="Screenshot of the student registration form with name, email and course fields">
+        <figcaption>Registration form</figcaption>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Decorative image</h2>
+      <!-- Purely decorative images get an EMPTY alt so screen readers skip them -->
+      <img src="https://static.vecteezy.com/system/resources/previews/051/591/666/large_2x/seamless-decorative-christmas-border-design-for-holiday-greetings-and-festive-promotions-free-png.png" width="600" heigh="auto" alt="">
+    </section>
+
+    <section>
+      <h2>Linked image</h2>
+      <a href="https://github.com/Sami-Last-Breath-Programming?tab=repositories"><img src="https://static.vecteezy.com/system/resources/previews/025/270/403/original/github-logo-icon-free-vector.jpg" width="80" height="80" alt="Visit my GitHub profile"></a>
+    </section>
+  </main>
+
+  <!--
+  ALT TEXT CHECKLIST
+  ✔ Describe what the image shows and why it matters.
+  ✔ Don't start with "image of…" (screen readers announce it).
+  ✔ Linked images: describe the link destination.
+  ✔ Decorative images: alt="".
+  -->
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Responsiveness audit with fixes applied by Abdul Sami for Kerner."
+    />
+    <title>Kerner – Responsive Audit &amp; Fixes</title>
+    <!--
+  AUDIT RESULTS (before → after)
+  #  Issue found                            Fix applied
+  1  No viewport meta → page zoomed out    Added <meta name="viewport">
+  2  Fixed widths (width: 960px)            Replaced with max-width + width: 100%
+  3  Images overflowing cards              img { max-width: 100%; height: auto }
+  4  Font sizes in px                       Used rem + clamp() for headings
+  5  Nav links overlapping                  flex-wrap: wrap
+  6  Wide table broke layout                Wrapped in overflow-x: auto container
+  7  Tap targets < 44px                     padding increased on links/buttons (min 44px)
+  8  Cramped column layout                  grid auto-fit + minmax()
+  -->
+    <style>
+      :root {
+        --midnight-dark: #0f172a;
+        --electric-blue: #3b82f6;
+        --blue-hover: #2563eb;
+        --bg-light: #f8fafc;
+        --card-bg: #ffffff;
+        --text-dark: #0f172a;
+        --text-muted: #64748b;
+        --border-color: #e2e8f0;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      body {
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+        line-height: 1.6;
+        padding: 1.5rem 1rem;
+        background: var(--bg-light);
+        color: var(--text-dark);
+      }
+
+      .container {
+        width: 100%;
+        max-width: 960px;
+        margin: 0 auto;
+      } /* fix 2 */
+
+      header {
+        margin-bottom: 1.5rem;
+      }
+
+      h1 {
+        font-size: clamp(1.6rem, 5vw, 2.8rem);
+        margin-bottom: 0.5rem;
+        color: var(--midnight-dark);
+        font-weight: 800;
+        letter-spacing: -0.5px;
+      } /* fix 4 */
+
+      h1 span {
+        color: var(--electric-blue);
+      }
+
+      .subtitle {
+        color: var(--text-muted);
+        font-size: 0.95rem;
+        margin-bottom: 1.25rem;
+      }
+
+      nav {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin-bottom: 1.5rem;
+      } /* fix 5 */
+
+      nav a {
+        padding: 0.75rem 1.25rem;
+        background: var(--midnight-dark);
+        color: #ffffff;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.9rem;
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        transition: background 0.2s, transform 0.1s;
+      } /* fix 7 */
+
+      nav a:hover {
+        background: var(--electric-blue);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 1.25rem;
+      } /* fix 8 */
+
+      .card {
+        background: var(--card-bg);
+        padding: 1.25rem;
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+        transition: transform 0.2s, border-color 0.2s;
+      }
+
+      .card:hover {
+        transform: translateY(-3px);
+        border-color: var(--electric-blue);
+      }
+
+      .card h2 {
+        font-size: 1.15rem;
+        margin-top: 0.75rem;
+        color: var(--midnight-dark);
+      }
+
+      .card p {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+        margin-top: 0.25rem;
+      }
+
+      img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 8px;
+      } /* fix 3 */
+
+      .table-wrap {
+        overflow-x: auto;
+        margin-top: 2rem;
+        background: var(--card-bg);
+        border-radius: 12px;
+        border: 1px solid var(--border-color);
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.05);
+      } /* fix 6 */
+
+      table {
+        border-collapse: collapse;
+        min-width: 600px;
+        width: 100%;
+      }
+
+      th,
+      td {
+        padding: 0.85rem 1rem;
+        text-align: left;
+        border-bottom: 1px solid var(--border-color);
+      }
+
+      th {
+        background: var(--midnight-dark);
+        color: #ffffff;
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      td {
+        font-size: 0.9rem;
+        color: #334155;
+      }
+
+      tr:last-child td {
+        border-bottom: none;
+      }
+
+      footer {
+        margin-top: 2.5rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--border-color);
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Kerner <span>Audit &amp; Fixes</span></h1>
+        <p class="subtitle">Systematic responsiveness verification · Abdul Sami</p>
+      </header>
+
+      <nav>
+        <a href="#">Overview</a>
+        <a href="#">AI Models</a>
+        <a href="#">Architecture</a>
+        <a href="#">Telemetry</a>
+        <a href="#">Contact</a>
+      </nav>
+
+      <div class="grid">
+        <div class="card">
+          <img
+            src="https://picsum.photos/id/119/800/500"
+            alt="Pro laptop workspace"
+          />
+          <h2>AI Workstation</h2>
+          <p>Optimized for deep learning inference &amp; neural modeling.</p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://picsum.photos/id/160/800/500"
+            alt="Tactile mechanical keyboard"
+          />
+          <h2>Kerner Cloud Hub</h2>
+          <p>Zero-downtime microservice orchestration pipelines.</p>
+        </div>
+
+        <div class="card">
+          <img
+            src="https://picsum.photos/id/250/800/500"
+            alt="Camera lens close up"
+          />
+          <h2>Telemetry System</h2>
+          <p>Real-time analytics and dynamic memory diagnostics.</p>
+        </div>
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Kerner Tier</th>
+              <th>Compute Power</th>
+              <th>Active Instances</th>
+              <th>Support Level</th>
+              <th>Monthly Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Developer Starter</td>
+              <td>10 vCPU / 16GB</td>
+              <td>1 Cluster</td>
+              <td>Community Email</td>
+              <td>₹0</td>
+            </tr>
+            <tr>
+              <td>Pro AI Node</td>
+              <td>64 vCPU / 128GB</td>
+              <td>5 Clusters</td>
+              <td>24/7 Priority Chat</td>
+              <td>₹4,999</td>
+            </tr>
+            <tr>
+              <td>Enterprise Kernel</td>
+              <td>Dedicated GPU Pods</td>
+              <td>Unlimited</td>
+              <td>Dedicated Engineer</td>
+              <td>Custom Plan</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer>
+        &copy; 2026 Kerner Brand Identity by Abdul Sami · All Responsive Fixes Verified
+      </footer>
+    </div>
+  </body>
+</html>

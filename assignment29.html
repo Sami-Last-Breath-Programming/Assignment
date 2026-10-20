@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Landing-page hero section built with position and z-index by Abdul Sami.">
+  <title>Hero Section – Abdul Sami</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      color: #1e293b;
+    }
+
+    .hero {
+      position: relative;
+      height: 100vh;
+      min-height: 500px;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    /* layer 0 – background image */
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+    }
+
+    /* layer 1 – dark overlay */
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0.75), rgba(15, 23, 42, 0.35));
+      z-index: 1;
+    }
+
+    /* layer 3 – nav stays above overlay */
+    .nav {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 3;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.25rem 2rem;
+    }
+
+    .nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 1.5rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav a:hover {
+      color: #2dd4bf;
+    }
+
+    .logo {
+      font-weight: 800;
+      font-size: 1.4rem;
+      color: #2dd4bf;
+      letter-spacing: -0.5px;
+    }
+
+    /* layer 2 – centered content */
+    .hero__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      z-index: 2;
+      width: min(90%, 750px);
+    }
+
+    .hero__content h1 {
+      font-size: clamp(2.2rem, 6vw, 4rem);
+      margin-bottom: 1rem;
+      line-height: 1.1;
+      font-weight: 800;
+    }
+
+    .hero__content p {
+      font-size: 1.25rem;
+      margin-bottom: 1.75rem;
+      color: #e2e8f0;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #0d9488;
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background-color 0.2s, transform 0.2s;
+      box-shadow: 0 4px 12px rgba(13, 148, 136, 0.4);
+    }
+
+    .btn:hover {
+      background: #0f766e;
+      transform: translateY(-2px);
+    }
+
+    /* layer 3 – floating badge pinned bottom-right */
+    .badge {
+      position: absolute;
+      right: 2rem;
+      bottom: 2rem;
+      z-index: 3;
+      background: #ffffff;
+      color: #0f172a;
+      padding: 0.75rem 1.25rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+      border-left: 4px solid #0d9488;
+    }
+
+    .badge strong {
+      display: block;
+      font-size: 1.6rem;
+      color: #0d9488;
+    }
+
+    /* fixed "back to top" floating button */
+    .fab {
+      position: fixed;
+      right: 1.5rem;
+      bottom: 1.5rem;
+      z-index: 10;
+      background: #0f172a;
+      color: #fff;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+      font-size: 1.2rem;
+      transition: background-color 0.2s;
+    }
+
+    .fab:hover {
+      background: #0d9488;
+    }
+
+    section.next {
+      padding: 4rem 2rem;
+      text-align: center;
+      background-color: #f8fafc;
+    }
+
+    section.next h2 {
+      color: #0f172a;
+      margin-bottom: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="hero">
+    <img class="hero__bg" src="https://picsum.photos/id/1015/1600/900" alt="Scenic river valley surrounded by green mountains">
+    <nav class="nav">
+      <span class="logo">Sami Travel</span>
+      <div><a href="#">Destinations</a><a href="#">Deals</a><a href="#">Contact</a></div>
+    </nav>
+    <div class="hero__content">
+      <h1>Explore The World With Abdul Sami</h1>
+      <p>Handpicked trips and custom itineraries to breathtaking global destinations.</p>
+      <a class="btn" href="#next">Start exploring</a>
+    </div>
+    <div class="badge"><strong>4.9★</strong>12,000+ happy travellers</div>
+  </header>
+  
+  <a class="fab" href="#" aria-label="Back to top">↑</a>
+  
+  <section class="next" id="next">
+    <h2>Popular Destinations</h2>
+    <p>Scroll content goes here – the round action button stays fixed in the lower right corner.</p>
+  </section>
+</body>
+
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Profile card and product card components for Abdul Sami.">
+  <title>Profile Card &amp; Product Card – Abdul Sami</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --accent-tag: #059669;
+      --bg-body: #f1f5f9;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border-color: #e2e8f0;
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg-body);
+      color: var(--text-main);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2.5rem;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 3rem 1rem;
+    }
+
+    /* ---------- PROFILE CARD ---------- */
+    .profile {
+      width: 300px;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      text-align: center;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .profile__cover {
+      height: 100px;
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+    }
+
+    .profile__avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 4px solid var(--bg-card);
+      margin-top: -50px;
+      object-fit: cover;
+    }
+
+    .profile__body {
+      padding: 0 1.5rem 1.5rem;
+    }
+
+    .profile h2 {
+      margin: .5rem 0 0;
+      color: var(--text-main);
+      font-size: 1.3rem;
+    }
+
+    .profile p {
+      color: var(--text-muted);
+      margin: .25rem 0 1rem;
+      font-size: 0.875rem;
+    }
+
+    .stats {
+      display: flex;
+      justify-content: space-around;
+      border-top: 1px solid var(--border-color);
+      padding-top: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .stats strong {
+      display: block;
+      font-size: 1.2rem;
+      color: var(--text-main);
+    }
+
+    .stats span {
+      font-size: .8rem;
+      color: var(--text-muted);
+    }
+
+    .btn {
+      display: inline-block;
+      background: var(--primary);
+      color: #fff;
+      padding: .6rem 1.6rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--primary-hover);
+    }
+
+    /* ---------- PRODUCT CARD ---------- */
+    .product {
+      width: 300px;
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+      overflow: hidden;
+      position: relative;
+      transition: transform .2s, border-color 0.2s;
+      border: 1px solid var(--border-color);
+    }
+
+    .product:hover {
+      transform: translateY(-6px);
+      border-color: var(--primary);
+    }
+
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .product__tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: var(--accent-tag);
+      color: #fff;
+      font-size: .75rem;
+      font-weight: 700;
+      padding: .25rem .7rem;
+      border-radius: 999px;
+    }
+
+    .product__body {
+      padding: 1.25rem;
+    }
+
+    .product h2 {
+      margin: 0 0 .25rem;
+      font-size: 1.2rem;
+      color: var(--text-main);
+    }
+
+    .rating {
+      color: #f59e0b;
+      font-size: .9rem;
+    }
+
+    .rating small {
+      color: var(--text-muted);
+    }
+
+    .price {
+      margin: .75rem 0;
+      color: var(--text-main);
+    }
+
+    .price strong {
+      font-size: 1.5rem;
+    }
+
+    .price s {
+      color: var(--text-muted);
+      margin-left: .5rem;
+    }
+
+    .product .btn {
+      display: block;
+      text-align: center;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- CARD 1: PROFILE -->
+  <article class="profile">
+    <div class="profile__cover"></div>
+    <img class="profile__avatar" src="assets/assignment15.png" alt="Portrait of Abdul Sami">
+    <div class="profile__body">
+      <h2>Abdul Sami</h2>
+      <p>BCA AI Student · Bareilly</p>
+      <div class="stats">
+        <div><strong>24</strong><span>Projects</span></div>
+        <div><strong>2.8k</strong><span>Followers</span></div>
+        <div><strong>520</strong><span>Commits</span></div>
+      </div>
+      <a class="btn" href="#">Follow</a>
+    </div>
+  </article>
+
+  <!-- CARD 2: PRODUCT -->
+  <article class="product">
+    <span class="product__tag">NEW RELEASE</span>
+    <img src="https://picsum.photos/id/160/600/400" alt="Minimalist mechanical keyboard">
+    <div class="product__body">
+      <h2>Smart Fitness Watch</h2>
+      <div class="rating" aria-label="5 out of 5 stars">★★★★★ <small>(380)</small></div>
+      <div class="price"><strong>₹4,499</strong><s>₹6,999</s></div>
+      <a class="btn" href="#">Buy now</a>
+    </div>
+  </article>
+</body>
+
+</html>
